@@ -1,0 +1,31 @@
+,Modelo,Parámetros óptimos,Score (Recall)
+0,"LogisticRegression(C=1, max_iter=10000, random_state=42)","{'classifier__C': 0.1, 'classifier__penalty': 'l2'}",0.7084499278931251
+1,"KNeighborsClassifier(n_neighbors=7, p=0.1, weights='distance')","{'classifier__n_neighbors': 7, 'classifier__p': 1, 'classifier__weights': 'distance'}",0.8866135427877684
+2,"DecisionTreeClassifier(criterion='entropy', max_features='auto',
+                       random_state=42)","{'classifier__criterion': 'entropy', 'classifier__max_depth': 20, 'classifier__max_features': 'auto', 'classifier__min_samples_leaf': 1, 'classifier__min_samples_split': 2}",0.9223733259206991
+3,"SVC(C=1, random_state=42)","{'classifier__C': 1, 'classifier__gamma': 'scale', 'classifier__kernel': 'rbf'}",0.8857399448328949
+4,"BaggingClassifier(base_estimator=LogisticRegression(C=0.1, max_iter=10000,
+                                                    random_state=42),
+                  max_features=0.5, max_samples=0.7)","{'classifier__base_estimator__C': 0.1, 'classifier__base_estimator__penalty': 'l2', 'classifier__max_features': 0.5, 'classifier__max_samples': 0.9, 'classifier__n_estimators': 10}",0.8118138858596874
+5,"BaggingClassifier(base_estimator=KNeighborsClassifier(n_neighbors=7, p=1,
+                                                      weights='distance'),
+                  max_features=0.5, max_samples=0.7)","{'classifier__base_estimator__n_neighbors': 7, 'classifier__base_estimator__p': 1, 'classifier__base_estimator__weights': 'distance', 'classifier__max_features': 0.5, 'classifier__max_samples': 0.5, 'classifier__n_estimators': 10}",0.9018728780740457
+6,"BaggingClassifier(base_estimator=SVC(C=1, random_state=42), max_features=0.5,
+                  max_samples=0.5)","{'classifier__base_estimator__C': 1, 'classifier__base_estimator__gamma': 'scale', 'classifier__base_estimator__kernel': 'rbf', 'classifier__max_features': 0.9, 'classifier__max_samples': 0.5, 'classifier__n_estimators': 10}",0.8872668999745785
+7,"RandomForestClassifier(max_features='log2', n_estimators=200, random_state=42)","{'classifier__max_depth': 20, 'classifier__max_features': 'log2', 'classifier__min_samples_leaf': 1, 'classifier__min_samples_split': 2, 'classifier__n_estimators': 300}",0.9611846434926813
+8,"AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=5,
+                                                         random_state=42),
+                   learning_rate=0.1, n_estimators=200)","{'classifier__base_estimator__max_depth': 5, 'classifier__base_estimator__min_samples_leaf': 1, 'classifier__base_estimator__min_samples_split': 2, 'classifier__learning_rate': 1, 'classifier__n_estimators': 200}",0.9507195244510018
+9,"GradientBoostingClassifier(learning_rate=0.5, max_depth=None,
+                           max_features='log2', n_estimators=200)","{'classifier__learning_rate': 0.1, 'classifier__max_depth': None, 'classifier__max_features': 'log2', 'classifier__min_samples_leaf': 1, 'classifier__min_samples_split': 2, 'classifier__n_estimators': 200}",0.962929463558112
+10,"XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=0.5, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, gamma=None,
+              gpu_id=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=0.1, max_bin=None,
+              max_cat_to_onehot=None, max_delta_step=None, max_depth=None,
+              max_leaves=None, min_child_weight=1, missing=nan,
+              monotone_constraints=None, n_estimators=200, n_jobs=None,
+              num_parallel_tree=None, predictor=None, random_state=None,
+              reg_alpha=0.1, reg_lambda=0.1, ...)","{'classifier__colsample_bytree': 0.5, 'classifier__learning_rate': 0.1, 'classifier__max_depth': None, 'classifier__min_child_weight': 1, 'classifier__n_estimators': 200, 'classifier__reg_alpha': 0.1, 'classifier__reg_lambda': 0.1, 'classifier__subsample': 0.9}",0.9653276408103529
