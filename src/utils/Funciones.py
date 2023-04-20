@@ -773,3 +773,14 @@ def extraccion_parametros(url):
                average_word_length(words_raw)]
         return row
     return None
+
+
+'''
+Haremos una función que preprocese la fila creada.
+
+'''
+def preprocesar_fila(fila):
+    fila = fila.fillna(0) # Eliminar valores faltantes
+    fila = fila.str.strip() # Eliminar espacios en blanco al principio y al final de cada valor
+    fila = pd.to_numeric(fila, errors='coerce') # Convertir valores numéricos de cadena a valores numéricos
+    return fila
