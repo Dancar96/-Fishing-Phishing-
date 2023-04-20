@@ -7,7 +7,7 @@ import pickle
 data = pd.read_csv('C:\\Users\\Daniel Carrera\\Documents\\GitHub\\-Fishing-Phishing-\\src\\data\\processed\\dataset_modelo.csv')
 
 # Dividimos los datos en X e y. Utilizaremos como X todas las columnas excepto la columna 'status', que será nuestro vector y.
-X = data.iloc[:, 1:-1]
+X = data.iloc[:, 0:-1]
 y = data['status']
 
 # Dividimos en X_test, X_val, y_train, y_val.

@@ -420,7 +420,7 @@ def external_hyperlinks(Href, Link, Media, Form, CSS, Favicon):
     if total == 0:
         return 0
     else :
-        redirecciones_externas(Href, Link, Media, Form, CSS, Favicon)/total
+        return redirecciones_externas(Href, Link, Media, Form, CSS, Favicon)/total
 
 
 
@@ -781,6 +781,9 @@ Haremos una función que preprocese la fila creada.
 '''
 def preprocesar_fila(fila):
     fila = fila.fillna(0) # Eliminar valores faltantes
-    fila = fila.str.strip() # Eliminar espacios en blanco al principio y al final de cada valor
-    fila = pd.to_numeric(fila, errors='coerce') # Convertir valores numéricos de cadena a valores numéricos
+    # Seleccionar columnas de tipo object
+    cols = fila.select_dtypes(include=['object']).index
+    # Convertir columnas de tipo object a int
+    for col in cols:
+        fila[col] = int(fila[col])
     return fila
