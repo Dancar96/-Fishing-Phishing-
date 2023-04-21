@@ -63,7 +63,11 @@ Lo siguiente que vamos a hacer, es extraer el dominio de la URL y guardarlo en u
 '''
 def sacar_dominio(url):
     o = urllib.parse.urlsplit(url)
-    return o.hostname, tldextract.extract(url).domain, o.path # Devuelve una tupla que contiene el nombre de host, el dominio y la ruta
+    dominio = o.hostname
+    subdominio = tldextract.extract(url).domain
+    tlp = o.path
+    return dominio, subdominio, tlp
+
 
 '''
 Lo siguiente será extraer todos los datos posibles de la página web mediante escrapeo.
@@ -558,8 +562,8 @@ def char_repeat(words_raw):
 'Domain_registration_length': Longitud del registro del dominio.
 
 '''
-def domain_registration_length(dominio):
-    longitud_dominio = len(dominio)
+def domain_registration_length(dominio, subdominio, tlp):
+    longitud_dominio = len(dominio + subdominio + tlp)
     return longitud_dominio
 
 
@@ -761,7 +765,7 @@ def extraccion_parametros(url):
                average_word_length(words_raw_path),
                length_word_raw(words_raw),
                char_repeat(words_raw),
-               domain_registration_length(domain),
+               domain_registration_length(url),
                external_redirection(Href, Link, Media, Form, CSS, Favicon),
                shortest_word_length(words_raw_host),
                ratio_digits(hostname),

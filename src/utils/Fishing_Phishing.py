@@ -7,15 +7,15 @@ import Funciones as f
 # Tus funciones extraer_caracteristicas y preprocesar_caracteristicas aquí
 
 # Carga el modelo entrenado previamente
-with open('C:\Users\Carre\OneDrive\Escritorio\Proyecto_Machine_Learning\-Fishing-Phishing-\src\model\Fishing_Phishing.pkl', 'rb') as modelo:
+with open('C:\\Users\\Carre\\OneDrive\\Escritorio\\Proyecto_Machine_Learning\\-Fishing-Phishing-\\src\\model\\Fishing_Phishing.pkl', 'rb') as modelo:
     modelo_xgb = pickle.load(modelo)
 
 # Función para predecir si una URL es phishing o legítima
 def predecir_phishing(url):
     fila = f.extraccion_parametros(url)
+    fila = pd.DataFrame([fila])
     fila_preprocesada = f.preprocesar_fila(fila)
-    df_fila = pd.DataFrame([fila_preprocesada])
-    prediccion = modelo_xgb.predict(df_fila)
+    prediccion = modelo_xgb.predict(fila_preprocesada)
     return prediccion[0]
 
 # Título de la aplicación
@@ -38,3 +38,4 @@ if st.button("Clasificar"):
             st.success("La URL es legítima")
     else:
         st.error("Por favor, ha habido un error, ingrese una URL:")
+
