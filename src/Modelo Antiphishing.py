@@ -4,7 +4,7 @@ from xgboost import XGBClassifier
 import pickle
 
 # Importamos las librerias necesarias.
-data = pd.read_csv('C:\\Users\\Daniel Carrera\\Documents\\GitHub\\-Fishing-Phishing-\\src\\data\\processed\\dataset_modelo.csv')
+data = pd.read_csv('src\\data\\processed\\dataset_modelo.csv')
 
 # Dividimos los datos en X e y. Utilizaremos como X todas las columnas excepto la columna 'status', que será nuestro vector y.
 X = data.iloc[:, 0:-1]
