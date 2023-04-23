@@ -1,6 +1,6 @@
-# <h1 align="center"> 🎣 Fishing Phishing 🎣
+# <h1 align="center"> 🎣 Antiphishing Model 🎣
 
-An online tool project for unmask non-legitimate URL's.
+An ML project for unmask non-legitimate URL's.
 
 This first project has been realized using Python and the libraries: ![NumPy](https://img.shields.io/badge/Numpy-777BB4?style=for-the-badge&logo=numpy&logoColor=white)  ![Pandas](https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white)  ![Scikit-Learn](https://img.shields.io/badge/scikit_learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 
